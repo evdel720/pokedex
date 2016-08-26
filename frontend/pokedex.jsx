@@ -6,7 +6,11 @@ import * as API from './util/api_util';
 import * as ACTIONS from './actions/pokemon_actions';
 
 
-const store = configureStore({pokemons: []});
+
+const store = configureStore();
+
+window.store = store;
+
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
   ReactDOM.render(

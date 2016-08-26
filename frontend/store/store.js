@@ -1,10 +1,10 @@
 import { createStore } from 'redux';
-import RootReducer from '../reducers/root_reducer';
+import PokemonReducer from '../reducers/pokemon_reducer';
 import MasterMiddleware from '../middleware/master_middleware';
 
-const configureStore = (preloadedState = {}) => (
+const configureStore = (preloadedState = {pokemons: [], pokemon: null}) => (
   createStore(
-    RootReducer,
+    PokemonReducer,
     preloadedState,
     MasterMiddleware)
 );

@@ -7,5 +7,22 @@ const fetchAllPokemon = (success) => {
   });
 };
 
+const fetchSinglePokemon = (pokeId, success) => {
+  $.ajax({
+    url: `/api/pokemon/${pokeId}.json`,
+    type: 'GET',
+    success: success
+  });
+};
 
-export { fetchAllPokemon };
+const createNewPokemon = (newPokemon, success) => {
+  $.ajax({
+    url: `/api/pokemon.json`,
+    type: 'POST',
+    data: newPokemon,
+    success: success
+  });
+};
+
+
+export { fetchAllPokemon, fetchSinglePokemon, createNewPokemon };
